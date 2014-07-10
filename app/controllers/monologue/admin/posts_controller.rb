@@ -14,7 +14,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   def preview
     # mockup our models for preview.
     @post = Monologue::Post.new post_params
-    @post.user_id = monologue_current_user.id
+    @post.user_id = main_app.current_user.id
     @post.published_at = Time.zone.now
     # render it exactly as it would display when live.
     render "/monologue/posts/show", layout: Monologue::Config.layout || "/layouts/monologue/application"
@@ -22,7 +22,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
 
   def create
     @post = Monologue::Post.new post_params
-    @post.user_id = monologue_current_user.id
+    @post.user_id = main_app.current_user.id
     if @post.save
       prepare_flash_and_redirect_to_edit()
     else
