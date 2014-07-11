@@ -6,10 +6,15 @@
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
   </ul>
   <section class="top-bar-section">
+    <%- options = {
+      "New Post" => new_admin_post_url,
+      "Posts" => admin_posts_url,
+      "Comments" => admin_comments_url
+    } %>
     <ul class="left">
-      <li class=""><%= link_to "New Post", new_admin_post_path %></li>
-      <li class=""><%= link_to "Posts", admin_posts_path %></li>
-      <li class=""><%= link_to "Comments", admin_comments_path %></li>
+      <%- options.each do |label, option| %>
+        <li class="<%= 'active' if request.original_url == option %>"><%= link_to label, option %></li>
+      <%- end %>
     </ul>
   </section>
 </nav>
