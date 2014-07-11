@@ -59,7 +59,7 @@ en:
           not_published: "Not published"
           status: "Published ?"
         new:
-          header: "New monologue"
+          header: "New Post"
         create:
           saved: "Monologue created"
           saved_with_future_date_and_cache: "Monologue created: posts with a future publication date will not be shown unless cache is cleared on that same day. Cache will most probably be generated before that and won't be refreshed automatically."
@@ -85,7 +85,7 @@ en:
           tags: "Tags"
       comments:
         show:
-          recent_comments: "Recent comments"
+          recent_comments: "Recent Comments"
       sessions:
         new:
           title: "Sign in"
