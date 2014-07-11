@@ -7,7 +7,8 @@
   <%= render 'layouts/monologue/application/head' %>
 </head>
 <body data-no-turbolink="true">
-  <div class="container">
+  <%= render 'layouts/navbar' %>
+  <div class="container row">
     <header class="main-header sixteen columns clearfix">
       <%= rss_icon %>
       <h1><a href="<%= root_path %>"><%=Monologue::Config.site_name%></a></h1>
